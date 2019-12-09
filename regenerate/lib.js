@@ -11,7 +11,7 @@ const logFile = 'regenerate/run.log'
 // const publicDir =  path.join(__dirname, '..', 'public')
 let config = {}
 
-function loadConfig() {
+(function loadConfig() {
   if (!configRaw.remote || !configRaw.remote.url) {
     throw new Error('no chosen remote')
   }
@@ -26,7 +26,7 @@ function loadConfig() {
   config.target = configRaw.target.toString()
   config.buildParams = configRaw.buildParams?configRaw.buildParams:[]
   config.webhook = configRaw.webhook
-}
+})()
 
 /** 
  * @param options options used in nodegit.Clone?
@@ -81,7 +81,6 @@ function fileLog(level, msg) {
 }
 
 async function exec() {
-  loadConfig()
   // TODO: backup /public
   await clonePostsToTarget(config.remote.url)
   await generate()
