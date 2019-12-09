@@ -9,7 +9,7 @@ const rimraf = require('rimraf')
 const configRaw = require('./config.json')
 const logFile = 'regenerate/run.log'
 // const publicDir =  path.join(__dirname, '..', 'public')
-let config = {}
+let config = {};
 
 (function loadConfig() {
   if (!configRaw.remote || !configRaw.remote.url) {
