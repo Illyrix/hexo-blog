@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: Illyrix's blog
+subtitle: 'El psy congroo'
+description: '面向waifu编程'
 keywords:
-author: John Doe
-language: en
+author: Illyrix
+language: zh
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://blog.illyrix.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

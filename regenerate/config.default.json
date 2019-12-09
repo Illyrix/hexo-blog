@@ -1,0 +1,12 @@
+{
+  "remote": {
+    "url": "https://github.com/Illyrix/blog.git",
+    "path": "posts"
+  },
+  "webhook": {
+    "secret": "",
+    "port": 9831
+  },
+  "target": "source/_posts",
+  "buildParams": []
+}

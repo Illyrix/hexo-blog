@@ -4,5 +4,6 @@ db.json
 *.log
 node_modules/
 public/
+regenerate/config.json
 source/_posts/*.md
 .deploy*/
