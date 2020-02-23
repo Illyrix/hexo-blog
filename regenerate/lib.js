@@ -23,17 +23,15 @@ let config = {};
   }
   config.remote = { url: configRaw.remote.url.toString() }
   config.remote.path = configRaw.remote.path?configRaw.remote.path.toString():''
+  config.remote.cloneOptions = configRaw.remote.cloneOptions?configRaw.remote.cloneOptions:{}
   config.target = configRaw.target.toString()
   config.buildParams = configRaw.buildParams?configRaw.buildParams:[]
   config.webhook = configRaw.webhook
 })()
 
-/** 
- * @param options options used in nodegit.Clone?
-*/
-async function clonePostsToTarget(options) {
+async function clonePostsToTarget() {
   const targetDir = mkTmpDir('hexo-blog-posts')
-  const repo = await nodegit.Clone(config.remote.url, targetDir)
+  const repo = await nodegit.Clone(config.remote.url, targetDir, config.remote.cloneOptions)
   const workdir = repo.workdir()
   const postDir = path.join(workdir, config.remote.path)
   try {
@@ -82,7 +80,7 @@ function fileLog(level, msg) {
 
 async function exec() {
   // TODO: backup /public
-  await clonePostsToTarget(config.remote.url)
+  await clonePostsToTarget()
   await generate()
   // TODO: recovery /public when error occurs
   // TODO: delete tmp /public finally

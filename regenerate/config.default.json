@@ -1,7 +1,10 @@
 {
   "remote": {
     "url": "https://github.com/Illyrix/blog.git",
-    "path": "posts"
+    "path": "posts",
+    "cloneOptions": {
+      "ignoreCertErrors": 0
+    }
   },
   "webhook": {
     "secret": "",
