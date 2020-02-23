@@ -8,6 +8,7 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "webhook": "pm2 start regenerate/index.js",
+    "initposts": "node regenerate/init.js",
     "pm2status": "pm2 status",
     "pm2stop": "pm2 stop index",
     "pm2logs": "pm2 logs index"
