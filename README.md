@@ -3,7 +3,7 @@
 
 * 部署
   1. `yarn`
-  2. 参照 config.default.json 新建 config.json 在 regenerate 目录下
+  2. 参照 config.default.js 新建 config.js 在 regenerate 目录下
   3. nginx location / root 设置为 public, 并 `service nginx reload` / `systemctl reload nginx`
   4. nginx location /webhook 设置为 `proxy_pass http://127.0.0.1:9831` 其中 9831 和 config.json 对应字段匹配
   5. `yarn initposts`
@@ -17,5 +17,5 @@
   * auto config tool
 
 * 配置
-  * `regenerate/config.json`
+  * `regenerate/config.js` 支持 nodegit 设置 callback functions
   * `_config.yml`
