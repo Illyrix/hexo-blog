@@ -6,7 +6,7 @@ const process = require('process')
 const child = require('child_process')
 const rimraf = require('rimraf')
 
-const configRaw = require('./config.json')
+const configRaw = require('./config.js')
 const logFile = 'regenerate/run.log'
 // const publicDir =  path.join(__dirname, '..', 'public')
 let config = {};

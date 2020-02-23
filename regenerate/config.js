@@ -1,13 +1,15 @@
-{
+module.exports = {
   "remote": {
     "url": "https://github.com/Illyrix/blog.git",
     "path": "posts",
     "cloneOptions": {
-      "ignoreCertErrors": 0
+      "fetchOpts": {
+        "ignoreCertErrors": 0
+      }
     }
   },
   "webhook": {
-    "secret": "",
+    "secret": "sss",
     "port": 9831
   },
   "target": "source/_posts",
