@@ -72,7 +72,7 @@ async function generate() {
 
 function fileLog(level, msg) {
   try {
-    fs.appendFileSync(path.join(__dirname, '..', logFile), `${new Date().toLocaleString()}[${level.toString().toUpperCase()}] ${msg}`)
+    fs.appendFileSync(path.join(__dirname, '..', logFile), `${new Date().toLocaleString()}[${level.toString().toUpperCase()}] ${msg}\n`)
   } catch (err) {
     console.log(`Erorr: fail to write log. err:${err} level:${level} msg:${msg}`)
   }
