@@ -10,6 +10,20 @@
   6. `yarn webhook`
   7. 使用 `pm2 status·stop·logs index` 控制 webhook 的监听脚本
 
+  tips:
+  * 如果使用 `yarn` 卡在安装 `nodegit` 不动了，建议使用 `cnpm install` 进行安装（使用 npm 换镜像源是不起作用的，因为安装 nodegit 需要 node-pre-gyp 下载预编译的二进制包，大部分在 aws 上）
+  * 如果出现 `Error: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found` 报错，请升级 `/usr/lib64/libstdc++.so.6.0.*` 的版本。可能需要从 gcc 源码手动编译：[参考链接](http://www.metsky.com/archives/164.html)（gcc 源码中科大源有下载）
+  * 如果出现 `Error: the SSL certificate is invalid`，传入配置项
+    ```javascript
+      cloneOptions: {
+        fetchOpts: {
+          callbacks: {
+            certificateCheck: () => 0
+          }
+        }
+      }
+    ```
+
 * todo list
   * 支持private的仓库
   * 支持build的参数
